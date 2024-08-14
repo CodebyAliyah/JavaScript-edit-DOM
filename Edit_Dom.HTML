@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Learning || Chai aur Code</title>
+</head>
+<body>
+
+  <ul class="bookName">
+    <li>English</li>
+  </ul>
+  
+<script>
+
+  function addBooks (bookNum) {
+    const li = document.createElement ('li')
+    li.innerHTML = `${bookNum}`
+    document.querySelector('.bookName')
+    .appendChild(li)
+  }
+
+addBooks("Phthon")
+addBooks("SQL")
+
+// The best way of edit DOM :
+
+function addOptiBooks(bookNum) {
+  const li = document.createElement('li')
+  li.appendChild(document.createTextNode(bookNum))
+  document.querySelector(".addBooks").appendChild(li)
+
+}
+addOptiBooks("Science")
+addBooks("Math")
+
+// How to edit :
+
+  const secondBook = document.querySelector("li : nth-child(2)")
+ const newBook = document.createElement('li')
+  newBook.textContent = "Computer"
+  secondBook.replaceWith(newBook)
+
+  // custom edit :
+
+  const firstBook = document.querySelector("li:nth-child(1)")
+  const newBook1 = document.createElement("li")
+  newBook1.textContent = 'Islamiat'
+  firstBook.replaceWith(newBook1)
+
+  // how to remove :
+  const lastBook = document.querySelector("li: last-child")
+  lastBook.remove()
+
+</script>
+</body>
+</html>
